@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Get the current username
+USERNAME=$(whoami)
+
+# Define variables for paths and filenames
+SCRIPT_DIR="/home/$USERNAME/.local/bin/Scripts/VirusTotalNetstatCheck/includes"
+NETSTAT_OUTPUT="$SCRIPT_DIR/NetstatRawOutput.txt"
+TARGET_IPS="$SCRIPT_DIR/target-ip.txt"
+CPP_FILE="$SCRIPT_DIR/vt-netstat-api.cpp"
+EXECUTABLE="$SCRIPT_DIR/vt-ip-analyzer"
+
+# Function to check if a command is available
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Check for necessary dependencies
+missing_dependencies=()
+
+if ! command_exists curl; then
+    missing_dependencies+=("curl")
+fi
+
+if ! command_exists g++; then
+    missing_dependencies+=("g++")
+fi
+
+# Check for OpenSSL development libraries
+if ! ldconfig -p | grep -q libssl.so; then
+    missing_dependencies+=("libssl-dev")
+fi
+
+# Check for nlohmann/json header file
+if ! find /usr/include /usr/local/include -name "json.hpp" >/dev/null 2>&1; then
+    missing_dependencies+=("nlohmann-json-dev")
+fi
+
+# If there are missing dependencies, print the install command and exit
+if [ ${#missing_dependencies[@]} -ne 0 ]; then
+    echo "The following dependencies are missing:"
+    for dep in "${missing_dependencies[@]}"; do
+        echo "- $dep"
+    done
+    echo "Please install them using the following command:"
+    echo "sudo apt-get install ${missing_dependencies[@]}"
+    exit 1
+fi
+
+# Run netstat -n inside PowerShell and capture the output in a file
+powershell.exe -Command "netstat -n" > "$NETSTAT_OUTPUT"
+
+# Filter for established connections and extract remote IP addresses, saving to target-ips.txt
+cat "$NETSTAT_OUTPUT" | grep ESTABLISHED | awk '{print $3}' | cut -d: -f1 | grep -v '127.0.0.1' | grep -v '::1' | grep -v '\[' | sort -u > "$TARGET_IPS"
+
+# Check if target-ip.txt exists and is not empty
+if [ ! -s "$TARGET_IPS" ]; then
+    echo "Error: target-ip.txt is empty or not found."
+    exit 1
+fi
+
+# Change directory to where the C++ file is located
+cd "$SCRIPT_DIR"
+
+# Compile the C++ program (if not already compiled)
+if [ ! -f "$EXECUTABLE" ]; then
+    g++ -o "$EXECUTABLE" "$CPP_FILE" -lcurl -lssl -lcrypto
+fi
+
+# Run the C++ executable
+"$EXECUTABLE"
+

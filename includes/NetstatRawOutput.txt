@@ -1,0 +1,41 @@
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    10.2.0.2:56528         104.18.32.115:443      ESTABLISHED
+  TCP    10.2.0.2:57314         104.18.32.115:443      ESTABLISHED
+  TCP    10.2.0.2:57366         185.159.159.1:80       ESTABLISHED
+  TCP    10.2.0.2:59009         34.107.243.93:443      ESTABLISHED
+  TCP    10.2.0.2:59030         20.189.173.11:443      TIME_WAIT
+  TCP    10.2.0.2:59034         20.189.173.11:443      TIME_WAIT
+  TCP    10.2.0.2:59035         20.189.173.11:443      ESTABLISHED
+  TCP    10.2.0.2:59037         54.235.163.223:443     ESTABLISHED
+  TCP    10.2.0.2:59038         52.45.78.16:443        ESTABLISHED
+  TCP    10.2.0.2:61360         10.2.0.1:65432         ESTABLISHED
+  TCP    10.2.0.2:61376         52.191.94.125:443      ESTABLISHED
+  TCP    10.2.0.2:62844         13.64.180.106:443      ESTABLISHED
+  TCP    127.0.0.1:1042         127.0.0.1:49679        ESTABLISHED
+  TCP    127.0.0.1:1042         127.0.0.1:49681        ESTABLISHED
+  TCP    127.0.0.1:9012         127.0.0.1:49678        ESTABLISHED
+  TCP    127.0.0.1:13030        127.0.0.1:49675        ESTABLISHED
+  TCP    127.0.0.1:13031        127.0.0.1:49677        ESTABLISHED
+  TCP    127.0.0.1:17532        127.0.0.1:49682        ESTABLISHED
+  TCP    127.0.0.1:17532        127.0.0.1:49683        ESTABLISHED
+  TCP    127.0.0.1:17945        127.0.0.1:49684        ESTABLISHED
+  TCP    127.0.0.1:17945        127.0.0.1:55103        ESTABLISHED
+  TCP    127.0.0.1:49675        127.0.0.1:13030        ESTABLISHED
+  TCP    127.0.0.1:49677        127.0.0.1:13031        ESTABLISHED
+  TCP    127.0.0.1:49678        127.0.0.1:9012         ESTABLISHED
+  TCP    127.0.0.1:49679        127.0.0.1:1042         ESTABLISHED
+  TCP    127.0.0.1:49681        127.0.0.1:1042         ESTABLISHED
+  TCP    127.0.0.1:49682        127.0.0.1:17532        ESTABLISHED
+  TCP    127.0.0.1:49683        127.0.0.1:17532        ESTABLISHED
+  TCP    127.0.0.1:49684        127.0.0.1:17945        ESTABLISHED
+  TCP    127.0.0.1:54168        127.0.0.1:54169        ESTABLISHED
+  TCP    127.0.0.1:54169        127.0.0.1:54168        ESTABLISHED
+  TCP    127.0.0.1:54170        127.0.0.1:54171        ESTABLISHED
+  TCP    127.0.0.1:54171        127.0.0.1:54170        ESTABLISHED
+  TCP    [::1]:49691            [::1]:49698            ESTABLISHED
+  TCP    [::1]:49696            [::1]:49697            ESTABLISHED
+  TCP    [::1]:49697            [::1]:49696            ESTABLISHED
+  TCP    [::1]:49698            [::1]:49691            ESTABLISHED
