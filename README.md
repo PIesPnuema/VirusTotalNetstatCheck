@@ -48,6 +48,7 @@ source ~/.bashrc  # or source ~/.zshrc
 ```
 
 ## Setup API Key
+You need to create an account with VirusTotal to receive an API key. 
 
 Create a file named `apikey.txt` in the same directory (`~/.local/bin/Scripts/VirusTotalNetstatCheck`) and place your VirusTotal API key in it. ***Ensure the file contains nothing but the API key.***
 
@@ -59,7 +60,7 @@ To run the script, navigate to the project directory and execute the script:
 
 ```sh
 cd ~/.local/bin/Scripts/VirusTotalNetstatCheck
-./virusTotalNetstatCheck.sh
+./virusTotalNetstatCheck
 ```
 
 If you successfully added the script to your `$PATH`, you can run the script using its name as a global command. Since the name is long, you can also create an alias to shorten it for convenience:
@@ -92,4 +93,4 @@ Now you can run the script using the `vtcheck` command.
 MIT_LICENSE
 ## Contributing
 
-I will not be maintaining this project. 
+I will not be maintaining this project. I hammered this together so I know there is room for improvement. If make it better feel free to let me know so I can fork yours. 
