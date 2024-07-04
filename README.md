@@ -93,4 +93,4 @@ Now you can run the script using the `vtcheck` command.
 MIT_LICENSE
 ## Contributing
 
-I will not be maintaining this project. I hammered this together so I know there is room for improvement. If make it better feel free to let me know so I can fork yours. 
+I will not be maintaining this project. I put it together quickly, and I am aware there is room for improvement. If you enhance it, please let me know so I can consider forking your version.
