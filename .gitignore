@@ -1,0 +1,5 @@
+# ignore apikey.txt file
+/includes/apikey.txt
+/includes/target-ip.txt
+/includes/NetstatRawOutput.txt
+/includes/vt-ip-analyzer
